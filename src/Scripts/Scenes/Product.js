@@ -99,7 +99,7 @@ export default class Product extends Scene {
             opacity: 0,
         } );
 
-        if ( this.product.pricematch ) {
+        if ( this.product.pricematch || this.product.threefortwo ) {
             this.from( this.template.querySelector( '.bomb' ), .4, {
                 scale: 2,
                 rotation: '+=30',

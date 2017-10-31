@@ -1,11 +1,12 @@
 #jingle {
     background-color: white;
     .logo {
-        @include background-image( null, 70% );
+        @include background-image( inline-image( 'assets/priceco_logo.svg' ), 70% );
 
         /**
          * Move the logo to optical center
          */
         height: 97%;
+
     }
 }

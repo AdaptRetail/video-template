@@ -13,7 +13,6 @@ export default class Jingle extends Scene {
         // adaptData.asset() will produce a url to the video based on adapt
         // (Also on the production file)
         this.video = adaptData.asset( window.adaptResponse.fields.video.value );
-        this.logo = 'assets/priceco_logo.svg'; // Switch out theese with the custom fields
 
     }
 
@@ -27,7 +26,7 @@ export default class Jingle extends Scene {
                         src="{{ video }}"></video>
                 </div>
                 {{^isShort}}
-                    <div class="frame logo" style="background-image: url( {{ logo }} )"></div>
+                    <div class="frame logo"></div>
                 {{/isShort}}
             </div>
             

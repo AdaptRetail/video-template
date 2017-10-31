@@ -1,0 +1,10 @@
+#intro {
+    .logo {
+        @include background-image( null, 70% );
+
+        /**
+         * Move the logo to optical center
+         */
+        height: 97%;
+    }
+}

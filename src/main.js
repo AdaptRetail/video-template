@@ -55,8 +55,8 @@ document.addEventListener( "DOMContentLoaded", function(e) {
         timeline.add(new Intro);
         // timeline.add(new Transition( 0 ));
         // timeline.add(new Products);
-        timeline.add(new Transition);
-        timeline.add(new Outro);
+        // timeline.add(new Transition);
+        // timeline.add(new Outro);
 
         // When ready, we start the timeline
         timeline.start();

@@ -7,6 +7,8 @@ export default class Jingle extends Scene {
 
         super( options );
 
+        this.isShort = options.short || false;
+
         // Get the image from banner info. 
         // adaptData.asset() will produce a url to the video based on adapt
         // (Also on the production file)
@@ -24,7 +26,9 @@ export default class Jingle extends Scene {
                         class="video"
                         src="{{ video }}"></video>
                 </div>
-                <div class="frame logo" style="background-image: url( {{ logo }} )"></div>
+                {{^isShort}}
+                    <div class="frame logo" style="background-image: url( {{ logo }} )"></div>
+                {{/isShort}}
             </div>
             
         `;
@@ -37,9 +41,11 @@ export default class Jingle extends Scene {
             )
         );
 
-        this.from( this.template.querySelector( '.logo' ), .8, {
-            opacity: 0,
-        } );
+        if (!this.isShort) {
+            this.from( this.template.querySelector( '.logo' ), .8, {
+                opacity: 0,
+            } );
+        }
     }
 
 }

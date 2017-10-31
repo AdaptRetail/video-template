@@ -1,12 +1,6 @@
 import { Scene } from '@adapt-retail/animation-framework';
 import { Video } from '@adapt-retail/animation-framework';
 
-/*
- * Warning:
- * Not shure if we can use Vivus
- *
- * https://github.com/maxwellito/vivus/blob/master/LICENSE
- */
 export default class Intro extends Scene {
 
     constructor( options = {} ) {
@@ -27,6 +21,9 @@ export default class Intro extends Scene {
                 <video
                     class="video"
                     src="{{ video }}"></video>
+            </div>
+            <div class="frame">
+                
             </div>
             
         `;

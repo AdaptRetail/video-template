@@ -46,12 +46,14 @@ document.addEventListener( "DOMContentLoaded", function(e) {
 
         // Add Scene objects to timeline to auto add them
         // Add it to window to work on it in the console.
-        let timeline = window.timeline = new Timeline();
+        let timeline = window.timeline = new Timeline( {
+            // repeat: -1,
+        } );
 
         // Add Scenes to timeline
         timeline.add(new Jingle);
-        timeline.add(new Transition( 0 ));
-        timeline.add(new Products);
+        timeline.add(new Transition( .5 ));
+        timeline.add(new Products, '-=.5');
         timeline.add(new Transition( .5 ));
         timeline.add(new Jingle, '-=.5');
 

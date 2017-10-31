@@ -18,8 +18,6 @@ export default class Product extends Scene {
                 <div class="grid is-vertical">
                     <div class="column is-filled">
                         <div>
-                            <!-- To save load speed we are lazy loading images.  -->
-                            <!-- This means we are adding the background image later in javascript -->
                             <div class="product-image" style="background-image: url({{ product.image }});"></div>
 
                             {{#product.pricematch}}
@@ -35,13 +33,9 @@ export default class Product extends Scene {
                         </div>
                     </div>
                     <div class="column is-narrow">
-
-                        <!-- To save load speed we are lazy loading images.  -->
-                        <!-- This means we are adding the background image later in javascript -->
                         <div class="vendor-logo image" style="background-image: url({{ product.vendorlogo }});"></div>
-
                         <div class="name">{{ product.name }}</div>
-                        <div class="description">{{ product.description }}</div>
+                        <!-- <div class="description">{{ product.description }}</div> -->
                         <div class="price__save">Was <span>{{ product.price.before }}</span></div>
                     </div>
                 </div>
@@ -93,57 +87,37 @@ export default class Product extends Scene {
         // Get the price element to reuse later
         this.priceTag = this.template.querySelector( '.price' );
 
-        // Reset the price tag flick
-        this.add( this.setThePercentageOfHowVisibleThePriceTagShouldBe() );
-
         // Animate in opacity
-        this.from( this.priceTag, .3, {
+        // this.from( this.priceTag, .3, {
+            // opacity: 0,
+        // } );
+
+        var productMotion = '10%';
+        this.from( this.template.querySelector( '.product-image' ), 3, {
+            scale: .7,
+            y: '20%',
             opacity: 0,
         } );
 
-        // Animate the price flick to full price tag.
-        // The paramter is to offset the animation 0.2 seconds before opacity is 100%
-        this.animatePriceFlickToFullPriceTag( '-=.2' );
-        
-        // Rotate the image in the full duration of the animation
-        this.to( this.template.querySelector( '.product-image' ), this.animationTime, {
-            rotation: '-=5',
+        if ( this.product.pricematch ) {
+            this.from( this.template.querySelector( '.bomb' ), .4, {
+                scale: 2,
+                rotation: '+=30',
+                opacity: 0,
+            }, 1 );
+            this.to( this.template.querySelector( '.bomb' ), .8, {
+                ease: SlowMo.ease.config( 0, 2, true ),
+                scale: 1.2,
+                rotation: '+=30',
+            }, '-=.8' );
+        }
+
+        this.from( this.template.querySelector( '.price' ), 3, {
+            x: '-=30%'
         }, 0 );
 
-    }
+        this.addPause( '+=.7' );
 
-    /**
-     * Set the price flick to a value
-     *
-     * @param value
-     *
-     * @return TweenMax
-     */
-    setThePercentageOfHowVisibleThePriceTagShouldBe( value = 0 ) {
-        return TweenMax.set( this.priceTag, {
-            clipPath: 'polygon(' + value + '% 0, 100% ' + (100-value) + '%, 100% 100%, 0 100%, 0 0)',
-        } );
-    }
-
-    /**
-     * Animate price flick to full price tag
-     *
-     * @return void
-     */
-    animatePriceFlickToFullPriceTag( align = '+=0' ) {
-
-        var self = this;
-
-        var fromValue = { value: 0 };
-        this.to( fromValue, .5, {
-            value: 100,
-            onUpdate( test ) {
-                self.setThePercentageOfHowVisibleThePriceTagShouldBe( fromValue.value );
-            },
-            onComplete() {
-                fromValue.value = 0;
-            }
-        }, align );
     }
 
 }

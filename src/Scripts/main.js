@@ -13,9 +13,9 @@ import AdaptData from '@adapt-retail/banner-data';
 import { Transition } from '@adapt-retail/animation-framework';
 // console.log(Transition);
 
-import Intro from './Components/Scenes/Intro';
-// import Products from './Components/Scenes/Products';
-import Outro from './Components/Scenes/Outro';
+import Intro from './Scenes/Intro';
+// import Products from './Scenes/Products';
+import Outro from './Scenes/Outro';
 import Timeline from '@adapt-retail/animation-framework';
 
 

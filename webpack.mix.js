@@ -23,6 +23,6 @@ if (mix.inProduction()) {
  * Build script and compile sass
  * Display banner and hot reload
  */
-mix.js('src/main.js', 'dist/ad.js')
+mix.js('src/Scripts/main.js', 'dist/ad.js')
    .sass('src/Style/main.scss', 'dist/ad.css')
    .browserSync();

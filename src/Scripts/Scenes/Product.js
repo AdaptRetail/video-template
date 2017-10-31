@@ -1,4 +1,4 @@
-import Scene from './Scene';
+import { Scene } from '@adapt-retail/animation-framework';
 
 export default class Product extends Scene {
 
@@ -13,14 +13,36 @@ export default class Product extends Scene {
 
     template() {
         return `
-            <div class="product">
+            <div class="frame product">
 
-                <div class="product__content">
-                    <div class="product-image" style="background-image:url( {{ product.image }} );"></div>
-                    <div class="price">
-                        <div class="price__container">
-                            <div class="price__number price__integer">{{ product.price.integer }}</div><div class="price__number price__decimal">{{ product.price.decimal }}</div>
+                <div class="grid is-vertical">
+                    <div class="column is-filled">
+                        <div>
+                            <!-- To save load speed we are lazy loading images.  -->
+                            <!-- This means we are adding the background image later in javascript -->
+                            <div class="product-image" style="background-image: url({{ product.image }});"></div>
+
+                            {{#product.pricematch}}
+                                <div class="bomb is-pricematch"></div>
+                            {{/product.pricematch}}
+                            {{#product.threefortwo}}
+                                <div class="bomb is-threefortwo"></div>
+                            {{/product.threefortwo}}
+
+                            <div class="price">
+                                <div class="price__number price__integer">{{ product.price.integer }}</div><div class="price__number price__decimal">{{ product.price.decimal }}</div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="column is-narrow">
+
+                        <!-- To save load speed we are lazy loading images.  -->
+                        <!-- This means we are adding the background image later in javascript -->
+                        <div class="vendor-logo image" style="background-image: url({{ product.vendorlogo }});"></div>
+
+                        <div class="name">{{ product.name }}</div>
+                        <div class="description">{{ product.description }}</div>
+                        <div class="price__save">Was <span>{{ product.price.before }}</span></div>
                     </div>
                 </div>
 
@@ -34,16 +56,36 @@ export default class Product extends Scene {
      * @return Object
      */
     format(item) {
-        var price = item.price.replace( /(\d+)[\.,:]*(\d+)*/, '$1.$2' );
-        var priceString = parseFloat( Math.round( price * 100 ) / 100 ).toFixed(2);
+        var tmpPrice = item.pricenow.split( /[,\.]/ );
 
-        return {
+        var returnValue = {
+            name: item.name,
             image: adaptData.asset( item.image ),
+            // Fix!! Dette skal vel være this.asset?
+            vendorlogo: adaptData.asset( item.vendorlogo ),
+            pricematch: item.pricematch === "1",
+            threefortwo: item.threefortwo === "1",
+            description: item.descriptionshort,
+
+            /**
+             * Split the price now to become array with integer and decimal
+             * If no decimal is found, we set as 00
+             */
             price: {
-                integer: priceString.split('.')[0],
-                decimal: priceString.split('.')[1],
+                before: item.pricebefore,
+                integer: tmpPrice[0],
+                decimal: tmpPrice.length >= 2 ? tmpPrice[1] : '00',
             },
-        };
+
+            /**
+             * Set the url to google analytics if url does not exists
+             */
+            url: item.url || 'https://google.com' + response.details.ga_url + '&utm_content=' + item.id,
+        }
+
+        console.log(returnValue);
+
+        return returnValue;
     }
 
     animate() {

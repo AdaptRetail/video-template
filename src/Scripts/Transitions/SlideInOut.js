@@ -1,4 +1,4 @@
-import Transition from '../Transitions/Transition';
+import { Transition } from '@adapt-retail/animation-framework';
 
 export default class SlideInOut extends Transition {
 

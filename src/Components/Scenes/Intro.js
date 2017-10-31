@@ -16,9 +16,7 @@ export default class Intro extends Scene {
         // Get the image from banner info. 
         // adaptData.asset() will produce a url to the video based on adapt
         // (Also on the production file)
-        this.video = window.adaptData.asset(
-            window.bannerInfo[ 'custom.videoIntro' ]
-        );
+        this.video = 'assets/priceco_3D.mp4';
 
     }
 

@@ -1,0 +1,12 @@
+.frame {
+    /**
+     * Use the view as the container
+     */
+    position: fixed;
+
+    /**
+     * Make the frame fill the whole container
+     */
+    width: 100%;
+    height: 100%;
+}

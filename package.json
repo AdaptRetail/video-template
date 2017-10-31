@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "npm run development",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production"
+  },
+  "dependencies": {
+    "@lassehaslev/fit-text": "^1.1.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "gsap": "^1.19.1",
+    "mustache": "^2.3.0",
+    "swipejs": "https://github.com/LasseHaslev/swipe.git",
+    "vivus": "^0.4.2"
+  },
+  "devDependencies": {
+    "@adapt-retail/adapt-mix-extender": "^0.0.1",
+    "@adapt-retail/banner-data": "^0.0.2",
+    "@adapt-retail/banner-style": "^1.0.0"
+  }
+}

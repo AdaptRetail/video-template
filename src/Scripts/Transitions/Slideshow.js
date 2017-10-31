@@ -20,45 +20,35 @@ export default class Slideshow extends Transition {
             this.set( [ this.in.template, this.in.template.querySelector( '.display__container' )], {
                 transformPerspective: 400,
             } );
-            this.from( this.in.template, this.transitionTime/2, {
+            this.from( this.in.template, this.transitionTime, {
                 // x: '-100%',
                 ease,
                 rotationX: 90,
                 transformOrigin: 'center bottom',
-                // webkitFilter: 'blur( 15px )',
             }, 0 );
 
-            this.from( this.in.template.querySelector( '.display__container' ), this.transitionTime/2 - this.transitionTime/5, {
-                // x: '-100%',
-                ease: Power3.easeOut,
-                rotationX: 45,
-                transformOrigin: 'center bottom',
-                // webkitFilter: 'blur( 15px )',
-            }, '-=' + this.transitionTime/5);
-
             this.from(this.in.template.querySelector( '.price' ), this.transitionTime, {
-                ease: Power3.easeOut,
-                y: '-40%',
+                ease,
+                y: '-100%',
             }, 0);
-
-            this.add( function() {
-                console.log('animation done');
-            } );
 
         }
 
         if (this.out) {
-            this.set( this.out.template, {
-                transformPerspective: 1000,
+            this.set( [ this.out.template, this.out.template.querySelector( '.display__container' )], {
+                transformPerspective: 800,
             } );
-            this.to( this.out.template, this.transitionTime/2, {
-                // x: '-100%',
+            this.to( this.out.template, this.transitionTime, {
                 ease,
                 rotationX: -90,
                 transformOrigin: 'center bottom',
                 opacity: 0,
-                // webkitFilter: 'blur( 15px )',
             }, 0 );
+
+            this.to(this.out.template.querySelector( '.price' ), this.transitionTime, {
+                ease,
+                y: '100%',
+            }, 0);
         }
 
     }

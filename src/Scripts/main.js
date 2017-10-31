@@ -52,11 +52,11 @@ document.addEventListener( "DOMContentLoaded", function(e) {
         } );
 
         // Add Scenes to timeline
-        timeline.add(new Jingle({ short: true }));
-        timeline.add(new Transition( .5 ));
+        // timeline.add(new Jingle({ short: true }));
+        // timeline.add(new Transition( .5 ));
         timeline.add(new Products, '-=.8');
-        timeline.add(new Transition( .5 ));
-        timeline.add(new Jingle, '-=.5');
+        // timeline.add(new Transition( .5 ));
+        // timeline.add(new Jingle, '-=.5');
 
         // When ready, we start the timeline
         timeline.start();

@@ -87,18 +87,6 @@ export default class Product extends Scene {
         // Get the price element to reuse later
         this.priceTag = this.template.querySelector( '.price' );
 
-        // Animate in opacity
-        // this.from( this.priceTag, .3, {
-            // opacity: 0,
-        // } );
-
-        var productMotion = '10%';
-        // this.from( this.template.querySelector( '.product-image' ), 3, {
-            // scale: .7,
-            // transformOrigin: 'bottom',
-            // // opacity: 0,
-        // } );
-
         if ( this.product.pricematch || this.product.threefortwo ) {
             this.from( this.template.querySelector( '.bomb' ), .4, {
                 scale: 2,
@@ -112,11 +100,7 @@ export default class Product extends Scene {
             }, '-=.8' );
         }
 
-        // this.from( this.template.querySelector( '.price' ), 3, {
-            // x: '-=30%'
-        // }, 0 );
-
-        this.addPause( '+=1' );
+        this.addPause( '+=1.2' );
 
     }
 

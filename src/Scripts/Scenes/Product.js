@@ -17,7 +17,7 @@ export default class Product extends Scene {
 
                 <div class="grid is-vertical">
                     <div class="column is-filled">
-                        <div>
+                        <div class="display__container">
                             <div class="product-image" style="background-image: url({{ product.image }});"></div>
 
                             {{#product.pricematch}}
@@ -32,7 +32,7 @@ export default class Product extends Scene {
                             </div>
                         </div>
                     </div>
-                    <div class="column is-narrow">
+                    <div class="column is-narrow product__info__container">
                         <div class="vendor-logo image" style="background-image: url({{ product.vendorlogo }});"></div>
                         <div class="name">{{ product.name }}</div>
                         <!-- <div class="description">{{ product.description }}</div> -->
@@ -93,11 +93,11 @@ export default class Product extends Scene {
         // } );
 
         var productMotion = '10%';
-        this.from( this.template.querySelector( '.product-image' ), 3, {
-            scale: .7,
-            y: '20%',
-            opacity: 0,
-        } );
+        // this.from( this.template.querySelector( '.product-image' ), 3, {
+            // scale: .7,
+            // transformOrigin: 'bottom',
+            // // opacity: 0,
+        // } );
 
         if ( this.product.pricematch || this.product.threefortwo ) {
             this.from( this.template.querySelector( '.bomb' ), .4, {
@@ -112,11 +112,11 @@ export default class Product extends Scene {
             }, '-=.8' );
         }
 
-        this.from( this.template.querySelector( '.price' ), 3, {
-            x: '-=30%'
-        }, 0 );
+        // this.from( this.template.querySelector( '.price' ), 3, {
+            // x: '-=30%'
+        // }, 0 );
 
-        this.addPause( '+=.5' );
+        this.addPause( '+=1' );
 
     }
 

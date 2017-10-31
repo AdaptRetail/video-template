@@ -45,15 +45,10 @@ document.addEventListener( "DOMContentLoaded", function(e) {
             return response.data[key];
         } );
 
-        // Get the information from the products.
-        // (The information lies on first index of products array)
-        // .shift() return the first element and remove it from the products array
-        window.bannerInfo = window.products.shift();
-
         // Add Scene objects to timeline to auto add them
         // Add it to window to work on it in the console.
         let timeline = window.timeline = new Timeline( {
-            // repeat: -1,
+            repeat: -1,
         } );
 
         // Add Scenes to timeline

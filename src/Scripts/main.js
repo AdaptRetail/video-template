@@ -13,9 +13,8 @@ import AdaptData from '@adapt-retail/banner-data';
 import { Transition } from '@adapt-retail/animation-framework';
 // console.log(Transition);
 
-import Intro from './Scenes/Intro';
+import Jingle from './Scenes/Jingle';
 // import Products from './Scenes/Products';
-import Outro from './Scenes/Outro';
 import Timeline from '@adapt-retail/animation-framework';
 
 
@@ -52,11 +51,11 @@ document.addEventListener( "DOMContentLoaded", function(e) {
         let timeline = window.timeline = new Timeline();
 
         // Add Scenes to timeline
-        timeline.add(new Intro);
-        // timeline.add(new Transition( 0 ));
+        timeline.add(new Jingle);
+        timeline.add(new Transition( 0 ));
         // timeline.add(new Products);
         // timeline.add(new Transition);
-        // timeline.add(new Outro);
+        timeline.add(new Jingle);
 
         // When ready, we start the timeline
         timeline.start();

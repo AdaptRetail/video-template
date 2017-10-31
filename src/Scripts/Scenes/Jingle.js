@@ -1,7 +1,7 @@
 import { Scene } from '@adapt-retail/animation-framework';
 import { Video } from '@adapt-retail/animation-framework';
 
-export default class Intro extends Scene {
+export default class Jingle extends Scene {
 
     constructor( options = {} ) {
 
@@ -18,14 +18,13 @@ export default class Intro extends Scene {
     template() {
         return `
 
-            <div id="intro" class="frame">
+            <div id="jingle" class="frame">
                 <div class="frame">
                     <video
                         class="video"
                         src="{{ video }}"></video>
                 </div>
-                <div class="frame logo" style="background-image: url( {{ logo }} )">
-                </div>
+                <div class="frame logo" style="background-image: url( {{ logo }} )"></div>
             </div>
             
         `;

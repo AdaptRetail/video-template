@@ -20,23 +20,29 @@ import Timeline from '@adapt-retail/animation-framework';
 // Prepare adapt data
 window.adaptData = new AdaptData( {
     account: 'priceco58c12436f20b4',
-    project: 1,
-    campaign: 1,
-    production: 1,
+    project: 9,
+    campaign: 24,
+    production: 70,
+    preview: true,
 } );
 
 // Run init when DOM is ready
 document.addEventListener( "DOMContentLoaded", function(e) {
 
-    adaptData.start( function( items ) {
+    adaptData.start( function( response ) {
+
+        /**
+         * Set the adapt response to global, so we can access it anywhere
+         */
+        window.adaptResponse = response;
 
         // When adding any property to window, you are making it globaly accessable throughout the project
         // This means that we can access the properties in the Scenes used later
 
         // Convert products to an array, this will be added to @adapt-retail/banner-data later
         // We are also adding it to products later
-        window.products = Object.keys( items.data ).map( function(key) {
-            return items.data[key];
+        window.products = Object.keys( response.data ).map( function(key) {
+            return response.data[key];
         } );
 
         // Get the information from the products.

@@ -2,14 +2,6 @@
 //and then make it act like only 16ms elapsed:
 
 import AdaptData from '@adapt-retail/banner-data';
-
-/**
- * !!! Warning !!!:
- *
- * All Transitions must be importet before each other object That extends Scene
- * Else it get circular error in webpack
- *
- */
 import { Transition } from '@adapt-retail/animation-framework';
 import Jingle from './Scenes/Jingle';
 import Products from './Scenes/Products';

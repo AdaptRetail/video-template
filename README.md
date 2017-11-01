@@ -1,16 +1,15 @@
 # Adapt Video template Video template
-> A great starting point for building product based banners.
-
-![Demo of banner template](assets/banner_preview.gif)
+> A great starting point for creating video banners just like a video editing
+> program, only with code.
 
 ## Recommended Skills
 
 This template uses a variety of different helpers to make your workflow as
-effective as possible. We recommend you to checkout each package documentation
-so you know what is able for you to use.
+effective as possible. We recommend you to check out each package documentation
+so you know what is available to use.
 
 ### General web knowledge
-> All packages are modern web standard and learning these skills will help you be a better developer.
+> All the following list items are modern web standards, and learning these skills will help you be a better developer in general.
 
 This template is built using a variety of web standard packages, and it is
 recommended that you are familiar with the following tecnologies.
@@ -58,18 +57,52 @@ npm run build
 
 ## Usage
 
-### `npm run watch`
-You can see the banner when working on it simply by writing `npm run watch`.
-This will start [Browser Sync](https://www.browsersync.io/) and will display your content, and refresh your browsers every time you save a file.
+### Folder structure
 
-If you want to test your banners on different devices you can see in the terminal after you entered the command.
-There will be a `External` info with a `ip-address`. 
-Copy paste that info into your browser on your external devices and watch the magic happens.
+#### src/Scripts
+This is where all you javascript is added. The `main.js` is the starting point
+for your banner.
+This is also where you create and start you main Timeline element.
+
+The `Scenes` folder is where you add your scenes.
+The `Transitions` folder is where you add your transitions.
+
+Thats it for the scripts!
+
+#### src/Style
+
+This is where you add you Sass files. The `main.scss` Is where you import all
+other files. You can find your sass variables in `src/Style/Utilities/Variables.scss`.
+
+The `src/Style/Scenes/` folder are meant to host all the style for each Scenes.
+While the `src/Style/Elements` are for all the elements in the view. See
+`src/Style/Elements/Price.scss` as an example.
+
+#### Assets
+The assets folder is used to store assets to use in this project.
+
+> When using sass-asset-inliner it uses the relative path from the `root` not
+> the folder you are currently in.
+
+### Running your code
+
+Open you terminal and go/`cd` in to your project root folder, and type the
+following command.
+
+#### `npm run watch`
+You can see the banner when working on it simply by writing `npm run watch`.
+This will start [Browser Sync](https://www.browsersync.io/) and will display your content in your web browser.
+The browser will refresh every time you save a file.
+
+> If you want to test your banners on different devices you can see in the terminal after you entered the command.
+> There will be a `External` info with a `ip-address`. 
+> Copy paste that info into your browser on your external devices and watch the magic happens.
 
 > Note: All the external devices must be on the same local network as your development machine.
 
-### `npm run prod`
+#### `npm run prod`
 The `npm run prod` command is minifying css and javascript and removes source maps.
+It will also prepare the banners to put in to [Adapt Retail](https://adaptretail.com).
 <!-- The prod command will also change `AdaptData` to `LightAdaptData`. -->
 
 ## Building banners
@@ -96,3 +129,17 @@ If you write good responsive banners you almost only need to think about 3 forma
 If you make good banners it does not matter if the banner is `180x500` or `120x480`.
 
 One of the best media queries are [ aspect ratio ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#aspect-ratio)
+
+#### Make your style external
+Often when you are creating templates to all modules in [Adapt Retail](https://adaptretail.com),
+you often end up with duplicating both the `Style` and `Script` logic.
+
+If this is the case we recommend two options to you: 
+##### Create a shared folder containing templates folders and shared `style` and `script` logic folders
+making the assets accessible through either a
+`Shared folder` for all the templates and you extract the reusable files from there.
+
+##### Create a `Github repository`
+The `Github repository` will contain all the reusable files.
+Now you can just `npm install {github url}` in to your project. Now you can find your files
+in `node_modules`.

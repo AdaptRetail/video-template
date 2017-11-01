@@ -50,11 +50,17 @@ The `src/Style/Scenes/` folder are meant to host all the style for each Scenes.
 While the `src/Style/Elements` are for all the elements in the view. See
 `src/Style/Elements/Price.scss` as an example.
 
+Personally i like to add a `_all.scss` to each Folder, that takes care of
+importing all other sass file in that folder. See `src/Style/Elements/_all.scss`
+as an example.
+
 #### Assets
 The assets folder is used to store assets to use in this project.
+We recommend inline most assets, as it makes the process of uploading to [Adapt Retail](https://adaptretail.com) much easier.
 
-> When using sass-asset-inliner it uses the relative path from the `root` not
-> the folder you are currently in.
+> When using sass-asset-inliner it uses the relative path from the `root`,
+> not the folder you are currently in. This means
+> `inline-image( 'assets/priceco_logo.svg' )` no matter where you currently are.
 
 ### Running your code
 

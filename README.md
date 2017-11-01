@@ -1,26 +1,59 @@
-# Banner template
+# Adapt Video template Video template
 > A great starting point for building product based banners.
 
 ![Demo of banner template](assets/banner_preview.gif)
 
-This system uses
-- [ Adapt style ](https://github.com/LasseHaslev/adapt-style)
-    - [sass-asset-inline](https://github.com/LasseHaslev/sass-asset-inliner)
-- [ Adapt Data ](https://github.com/LasseHaslev/adapt-data)
-- [laravel-mix](https://github.com/JeffreyWay/laravel-mix)
-    - [ Laravel mix extender ](https://github.com/LasseHaslev/adapt-mix-extender)
+## Recommended Skills
+
+This template uses a variety of different helpers to make your workflow as
+effective as possible. We recommend you to checkout each package documentation
+so you know what is able for you to use.
+
+### General web knowledge
+> All packages are modern web standard and learning these skills will help you be a better developer.
+
+This template is built using a variety of web standard packages, and it is
+recommended that you are familiar with the following tecnologies.
+- [Javscript](https://www.javascript.com/)
+- [Git (version control)](https://try.github.io/levels/1/challenges/1)
+- [Github](https://github.com)
+- [NPM (Package manager for NodeJS)](https://www.npmjs.com/)
+- [Sass (CSS with superpowers)](http://sass-lang.com/)
+- [GreenSock/GSAP (animation framework)](https://greensock.com/gsap)
+
+### Packages this template uses
+These are the packages, this template depend on. We recommend you take a look at
+these to. At least the first one.
+- [@adapt-retail/animation-framework (The structure and engine for this template)](https://github.com/AdaptRetail/animation-framework)
+- [@adapt-retail/banner-style (Sass Micro framework for banners)](https://github.com/AdaptRetail/banner-style)
+    - [@lassehaslev/sass-asset-inline (Possibility to base64 files in Sass)](https://github.com/LasseHaslev/sass-asset-inliner)
+- [@adapt-retail/banner-data (Communicate with Adapt Retail)](https://github.com/AdaptRetail/banner-data)
+- [laravel-mix (An elegant wrapper around Webpack for the 80% use case.)](https://github.com/JeffreyWay/laravel-mix)
+    - [@adapt-retail/adapt-mix-extender (Extending laravel-mix to include awesome features)](https://github.com/AdaptRetail/adapt-mix-extender)
 
 ## Install
 
 ```bash
 # Clone repository
-git clone https://github.com/AdaptRetail/banner-template
+git clone https://github.com/AdaptRetail/video-template
 
 # Go to directory
-cd banner-template
+cd video-template
 
 # Install dependencies
 npm install 
+```
+
+#### Before this package is out
+```bash
+# Go to directory
+cd node_modules/@adapt-retail/animation-framework
+
+# Install dependencies
+npm install
+
+# Build files
+npm run build
 ```
 
 ## Usage

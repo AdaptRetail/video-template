@@ -23,7 +23,7 @@
         - [Make your style external](#make-your-style-external)
             - [Shared folder](#shared-folder)
             - [Github repository](#github-repository)
-<!-- - [Publish to Adapt Retail](#publish-to-adapt-retail) -->
+- [Publish to Adapt Retail](#publish-to-adapt-retail)
 
 <a name="install"></a>
 ## Install
@@ -197,3 +197,15 @@ making the assets accessible through either a
 The `Github repository` will contain all the reusable files.
 Now you can just `npm install {github url}` in to your project. Now you can find your files
 in `node_modules`.
+
+<a name="publish-to-adapt-retail"></a>
+## Publishing to [Adapt Retail](https://adaptretail.com)
+
+1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
+1. [Log in to your Adapt retail account](https://app.adaptretail.com/signup_login.php?task=login)
+1. Click on template section in your left navigation bar
+1. Create a new `Banner template`
+1. Set your properties in `Details` tab
+1. Select `Files` tab
+1. Drag `dist/ad.js` and `dist/ad.css` to the `dropzone (Drop files or click to upload)` in Adapt
+1. **And you are done!**

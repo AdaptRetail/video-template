@@ -40,7 +40,7 @@ document.addEventListener( "DOMContentLoaded", function(e) {
         // Add Scene objects to timeline to auto add them
         // Add it to window to work on it in the console.
         let timeline = window.timeline = new Timeline( {
-            repeat: -1,
+            // repeat: -1,
         } );
 
         // Add Scenes to timeline

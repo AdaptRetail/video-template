@@ -24,14 +24,14 @@ export default class Products extends Scene {
 
             // Add transition in and out between the products
             // Last product will not have a transition and will stay on screen
-            this.add( new Slideshow( 1.8 ) );
+            this.add( new Slideshow( 1.2 ) );
 
             // Add product scene to timeline.
             // Passe product information
             this.add( new Product( this.products[i], {
                 // Make the products be renders to this container
                 renderTo: this.template,
-            }), '-=1' );
+            }), '-=.5' );
 
         }
 

@@ -13,42 +13,52 @@ export default class Slideshow extends Transition {
      */
     animate() {
 
-        let ease = Power3.easeInOut;
+        let easeIn = Power3.easeOut;
+        let easeOut = Power3.easeInOut;
 
-        // Animate the element in
-        if (this.in) {
-            this.set( [ this.in.template, this.in.template.querySelector( '.display__container' )], {
-                transformPerspective: 400,
-            } );
-            this.from( this.in.template, this.transitionTime, {
-                // x: '-100%',
-                ease,
-                rotationX: 90,
-                transformOrigin: 'center bottom',
-            }, 0 );
+        // Set the transform perspective for in and out elements
 
-            this.from(this.in.template.querySelector( '.price' ), this.transitionTime, {
-                ease,
-                y: '-100%',
-            }, 0);
-
-        }
-
+        // Animate out if it exists
         if (this.out) {
-            this.set( [ this.out.template, this.out.template.querySelector( '.display__container' )], {
+            this.set( this.out.template, {
                 transformPerspective: 800,
             } );
-            this.to( this.out.template, this.transitionTime, {
-                ease,
+            this.to( this.out.template, this.transitionTime/2, {
+                easeOut,
                 rotationX: -90,
                 transformOrigin: 'center bottom',
                 opacity: 0,
-            }, 0 );
+            } );
 
-            this.to(this.out.template.querySelector( '.price' ), this.transitionTime, {
-                ease,
+            this.to(this.out.template.querySelector( '.price' ), this.transitionTime/2, {
+                easeOut,
                 y: '100%',
-            }, 0);
+            }, '-=' + this.transitionTime/2);
+        }
+
+        // Animate the element in if exists
+        if (this.in) {
+            // this.set( this.in.template, {
+                // transformPerspective: 400,
+            // } );
+            this.fromTo( this.in.template, this.transitionTime/2, {
+                // x: '-100%',
+                transformPerspective: 400,
+                easeIn,
+                rotationX: 90,
+                transformOrigin: 'center bottom',
+            }, {
+                // x: '-100%',
+                transformPerspective: 400,
+                easeIn,
+                rotationX: 0,
+            }, '-=.09' );
+
+            this.from(this.in.template.querySelector( '.price' ), this.transitionTime/2, {
+                easeIn,
+                y: '-100%',
+            }, '-=' + this.transitionTime/2);
+
         }
 
     }

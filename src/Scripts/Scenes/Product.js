@@ -100,7 +100,7 @@ export default class Product extends Scene {
             }, '-=.8' );
         }
 
-        this.addPause( '+=1.2' );
+        this.addPause( '+=1.5' );
 
     }
 

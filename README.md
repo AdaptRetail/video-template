@@ -1,4 +1,4 @@
-# Adapt Video template Video template
+# Adapt Video template
 > A great starting point for creating video banners just like a video editing
 > program, only with code.
 

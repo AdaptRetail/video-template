@@ -39,12 +39,12 @@ cd video-template
 npm install 
 ```
 
-#### (Hey, Jack, over here!) Full install before this package is released 
+### (Hey, Jack, over here!) Full install before this package is released 
 
 Before the framework is released, there are some extra steps to take before this template will work properly.
 Follow these instructions. These steps will be removed when the framework is released.
 
-##### Prepare the framework as a local package
+#### Prepare the framework as a local package
 ```bash
 # Clone repository
 git clone https://github.com/LasseHaslev/adapt-animation-framework.git
@@ -66,7 +66,7 @@ npm link
 cd ..
 ```
 
-##### Build the template using the local framework package
+#### Build the template using the local framework package
 
 Back in the "root" we are ready to get the template.
 

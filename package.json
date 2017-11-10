@@ -9,15 +9,11 @@
   },
   "dependencies": {
     "@adapt-retail/animation-framework": "git+https://github.com/LasseHaslev/adapt-animation-framework.git",
-    "@lassehaslev/fit-text": "^1.1.0",
-    "browser-sync": "^2.18.13",
-    "browser-sync-webpack-plugin": "^1.2.0",
-    "gsap": "^1.19.1",
-    "mustache": "^2.3.0",
-    "swipejs": "https://github.com/LasseHaslev/swipe.git",
-    "vivus": "^0.4.2"
+    "@lassehaslev/fit-text": "^1.1.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
     "@adapt-retail/adapt-mix-extender": "^0.0.1",
     "@adapt-retail/banner-data": "^0.1.0",
     "@adapt-retail/banner-style": "^1.0.0"

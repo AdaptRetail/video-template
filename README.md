@@ -5,13 +5,13 @@
 ## Table of content
 - [Install](#install)
 - [Usage](#usage)
+    - [Running your code](#running-your-code)
+        - [`npm run watch`](#npm-run-watch)
+        - [`npm run prod`](#npm-run-prod)
     - [Folder structure](#folder-structure)
         - [src/Scripts](#src-scripts)
         - [src/Style](#src-style)
         - [Assets](#assets)
-    - [Running your code](#running-your-code)
-        - [`npm run watch`](#npm-run-watch)
-        - [`npm run prod`](#npm-run-prod)
 - [Recommended skills](#recommended-skills)
     - [General web knowledge](#general-web-knowledge)
     - [Packages this template uses](#packages-this-template-uses)
@@ -40,20 +40,79 @@ cd video-template
 npm install 
 ```
 
-#### Before this package is out
+#### (Hey, Jack, over here!) Full install before this package is released 
+
+Before the framework is released, there are some extra steps to take before this template will work properly.
+Follow these instructions. These steps will be removed when the framework is released.
+
+##### Prepare the framework as a local package
 ```bash
+# Clone repository
+git clone https://github.com/LasseHaslev/adapt-animation-framework.git
+
 # Go to directory
-cd node_modules/@adapt-retail/animation-framework
+cd adapt-animation-framework
 
 # Install dependencies
 npm install
 
-# Build files
+# Build files to dist folder
 npm run build
+
+# Make npm package globally accessable on system
+# Usually done when developing packages
+npm link
+
+# Go out of the adapt-animation-framwork folder
+cd ..
+```
+
+##### Build the template using the local framework package
+
+Back in the "root" we are ready to get the template.
+
+```bash
+# Clone repository
+git clone https://github.com/LasseHaslev/adapt-video-template.git
+
+# Go to directory
+cd adapt-video-template
+
+# Install dependencies
+npm install
+
+# Import the globally accessible framework package
+# This overwrites the npm/github package to the local one we just created.
+# ( Usually done when developing packages )
+npm link @adapt-retail/animation-framework
 ```
 
 <a name="usage"></a>
 ## Usage
+
+<a name="running-your-code"></a>
+### Running your code
+
+Open you terminal and `cd` in to your project root folder, and type the
+following command.
+
+<a name="npm-run-watch"></a>
+#### `npm run watch`
+You can see the banner when working on it simply by writing `npm run watch`.
+This will start [Browser Sync](https://www.browsersync.io/) and will display your content in your web browser.
+The browser will refresh every time you save a file.
+
+> If you want to test your banners on different devices you can see in the terminal after you entered the command.
+> There will be a `External` info with a `ip-address`. 
+> Copy paste that info into your browser on your external devices and watch the magic happens.
+
+> Note: All the external devices must be on the same local network as your development machine.
+
+<a name="npm-run-prod"></a>
+#### `npm run prod`
+The `npm run prod` command is minifying css and javascript and removes source maps.
+It will also prepare the banners for uploading to [Adapt Retail](https://adaptretail.com).
+<!-- The prod command will also change `AdaptData` to `LightAdaptData`. -->
 
 <a name="folder-structure"></a>
 ### Folder structure
@@ -91,30 +150,6 @@ We recommend inline most assets, as it makes the process of uploading to [Adapt 
 > When using sass-asset-inliner it uses the relative path from the `root`,
 > not the folder you are currently in. This means
 > `inline-image( 'assets/priceco_logo.svg' )` no matter where you currently are.
-
-<a name="running-your-code"></a>
-### Running your code
-
-Open you terminal and go/`cd` in to your project root folder, and type the
-following command.
-
-<a name="npm-run-watch"></a>
-#### `npm run watch`
-You can see the banner when working on it simply by writing `npm run watch`.
-This will start [Browser Sync](https://www.browsersync.io/) and will display your content in your web browser.
-The browser will refresh every time you save a file.
-
-> If you want to test your banners on different devices you can see in the terminal after you entered the command.
-> There will be a `External` info with a `ip-address`. 
-> Copy paste that info into your browser on your external devices and watch the magic happens.
-
-> Note: All the external devices must be on the same local network as your development machine.
-
-<a name="npm-run-prod"></a>
-#### `npm run prod`
-The `npm run prod` command is minifying css and javascript and removes source maps.
-It will also prepare the banners to put in to [Adapt Retail](https://adaptretail.com).
-<!-- The prod command will also change `AdaptData` to `LightAdaptData`. -->
 
 <a name="recommended-skills"></a>
 ## Recommended skills

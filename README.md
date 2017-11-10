@@ -24,6 +24,7 @@
             - [Shared folder](#shared-folder)
             - [Github repository](#github-repository)
 - [Publish to Adapt Retail](#publish-to-adapt-retail)
+- [License](#license)
 
 <a name="install"></a>
 ## Install
@@ -209,3 +210,11 @@ in `node_modules`.
 1. Select `Files` tab
 1. Drag `dist/ad.js` and `dist/ad.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
+
+<a name="license"></a>
+## License
+
+The code provided in this template is MIT Licensed,
+but it rely on external packages that may not.
+
+Read the documentation for [@adapt-retail/animation-framework](https://github.com/AdaptRetail/animation-framework#license).

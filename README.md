@@ -131,4 +131,4 @@ these to. At least the first one.
 
 Read the documentation for [@adapt-retail/animation-framework](https://github.com/AdaptRetail/animation-framework#license).
 
-The code provided in this framework is available for usage by all clients of [Adapt Retail](https://adaptretail.com).
+The code provided in this template is available for usage by all clients of [Adapt Retail](https://adaptretail.com).

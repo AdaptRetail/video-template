@@ -64,7 +64,7 @@ This template uses a variety of different helpers to make your workflow as
 effective as possible. We recommend you to check out each package documentation
 so you know what is available to use.
 
-> At least check out the documentation for the animation framework [@adapt-retail/animation-framework](https://github.com/AdaptRetail/animation-framework).
+> At least check out the documentation for the animation framework [@adapt-retail/animation-framework](https://github.com/AdaptRetail/animation-framework) to understand how to framework works.
 
 <a name="folder-structure"></a>
 ### Folder structure

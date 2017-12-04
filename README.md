@@ -46,6 +46,7 @@ This template is using `npm`, `Sass` and `Webpack` to build your files and conta
 # auto refresh browser on file save
 npm run watch
 ```
+
 > You can also display your production on other devices on your local network.
 > Check your terminal for information after running `npm run watch`.
 

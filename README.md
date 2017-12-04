@@ -4,10 +4,9 @@
 ## Table of content
 - [Install](#install)
 - [Usage](#usage)
-    - [Running your code](#running-your-code)
-        - [`npm run watch`](#npm-run-watch)
-        - [`npm run prod`](#npm-run-prod)
-    - [Recommended skills](#recommended-skills)
+    - [Local development](#npm-run-watch)
+    - [Prepare files for production](#npm-run-prod)
+    - [Files](#files)
     - [Folder structure](#folder-structure)
         - [src/Scripts](#src-scripts)
         - [src/Style](#src-style)
@@ -33,96 +32,140 @@ npm install
 <a name="usage"></a>
 ## Usage
 
-<a name="running-your-code"></a>
-### Running your code
+> All dependencies must be [installed](#install) before you can start using the template.
 
-After installation; open you terminal and `cd` in to your project root folder, and type the
-following command.
+This template is using `npm`, `Sass` and `Webpack` to build your files and containing [some extra helpers](#dependencies) to make things easier for you.
 
 <a name="npm-run-watch"></a>
-#### `npm run watch`
-You can see the banner when working on it simply by writing `npm run watch`.
-This will start [Browser Sync](https://www.browsersync.io/) and will display your content in your web browser.
-The browser will refresh every time you save a file.
+### Local development
 
-> If you want to test your banners on different devices you can see in the terminal after you entered the command.
-> There will be a `External` info with a `ip-address`. 
-> Copy paste that info into your browser on your external devices and watch the magic happens.
-
-> Note: All the external devices must be on the same local network as your development machine.
+```bash
+# Open file in default browser (browser-sync) and
+# auto refresh browser on file save
+npm run watch
+```
+> You can also display your production on other devices on your local network.
+> Check your terminal for information after running `npm run watch`.
 
 <a name="npm-run-prod"></a>
-#### `npm run prod`
-The `npm run prod` command is minifying css and javascript and removes source maps.
-It will also prepare the banners for uploading to [Adapt Retail](https://adaptretail.com).
-<!-- The prod command will also change `AdaptData` to `LightAdaptData`. -->
+### Prepare files for production
 
-<a name="recommended-skills"></a>
-### Recommended skills
+```bash
+# Compile files to dist/ folder
+npm run prod
+```
 
-This template uses a variety of different helpers to make your workflow as
-effective as possible. We recommend you to check out each package documentation
-so you know what is available to use.
+The `npm run prod` command is compiling and minifying the css and javascript.
+All your files will be compiled to the `dist/` folder.
 
-> At least check out the documentation for the animation framework [@adapt-retail/animation-framework](https://github.com/AdaptRetail/animation-framework) to understand how to framework works.
+<a name="files"></a>
+### Files
 
-<a name="folder-structure"></a>
-### Folder structure
+All your production files will be found in the `src/` folder.
 
-<a name="src-scripts"></a>
-#### src/Scripts
-This is where all you javascript is added. The `main.js` is the starting point
-for your banner.
-This is also where you create and start you main Timeline element.
+We have provided the files with some content, but
+this is your files and we don't tell you what you do. 
+This is our approach when we are creating production, 
+and you may add, move and remove files however you want.
 
-The `Scenes` folder is where you add your scenes.
-The `Transitions` folder is where you add your transitions.
+> All files are thoroughly commented, so if you're in doubt, just read the source. 
 
-Thats it for the scripts!
+<a name="script"></a>
+#### [`src/Script/main.js`](https://github.com/AdaptRetail/banner-template/blob/master/src/Script/main.js)
 
-<a name="src-style"></a>
-#### src/Style
+This is the main file for your JavaScript.
+What to do from this point is totally up to you.
 
-This is where you add you Sass files. The `main.scss` Is where you import all
-other files. You can find your sass variables in `src/Style/Utilities/Variables.scss`.
+This file will be compiled down with [Webpack](https://webpack.github.io/) using [laravel-mix](https://github.com/JeffreyWay/laravel-mix).
+This gives you some cool opertunities like.
 
-The `src/Style/Scenes/` folder are meant to host all the style for each Scenes.
-While the `src/Style/Elements` are for all the elements in the view. See
-`src/Style/Elements/Price.scss` as an example.
+- [Up to ECMAScript 6 (ES6) JavaScript syntax](http://es6-features.org/)
+- [Import packages through NPM modules](https://www.npmjs.com/)
+- And more
 
-Personally i like to add a `_all.scss` to each Folder, that takes care of
-importing all other sass file in that folder. See `src/Style/Elements/_all.scss`
-as an example.
+<a name="style"></a>
+#### [`src/Style/main.scss`](https://github.com/AdaptRetail/banner-template/blob/master/src/Style/main.scss)
 
-<a name="assets"></a>
-#### Assets
-The assets folder is used to store assets to use in this project.
-We recommend inline most assets, as it makes the process of uploading to [Adapt Retail](https://adaptretail.com) much easier.
+This is the main Sass file.
+This file is including all the other sass files.
+Do whatever you want from here.
 
-> When using sass-asset-inliner it uses the relative path from the `root`,
-> not the folder you are currently in. This means
-> `inline-image( 'assets/priceco_logo.svg' )` no matter where you currently are.
+We have set up some logic to get you started. Browse through the files and see what each file does.
+If you want to overwrite some variables you can do it in [`src/Style/Utilities/Variables.scss`](https://github.com/AdaptRetail/banner-template/blob/master/src/Style/Utilities/Variables.scss).
 
-<a name="packages-this-template-uses"></a>
-### Packages this template uses
-These are the packages, this template depend on. We recommend you take a look at
-these to. At least the first one.
-- [@adapt-retail/animation-framework (The structure and engine for this template)](https://github.com/AdaptRetail/animation-framework)
-- [@adapt-retail/banner-style (Sass Micro framework for banners)](https://github.com/AdaptRetail/banner-style)
-    - [@lassehaslev/sass-asset-inline (Possibility to base64 files in Sass)](https://github.com/LasseHaslev/sass-asset-inliner)
-- [@adapt-retail/banner-data (Communicate with Adapt Retail)](https://github.com/AdaptRetail/banner-data)
-- [laravel-mix (An elegant wrapper around Webpack for the 80% use case.)](https://github.com/JeffreyWay/laravel-mix)
-    - [@adapt-retail/adapt-mix-extender (Extending laravel-mix to include awesome features)](https://github.com/AdaptRetail/adapt-mix-extender)
+> Most of the files are containing variables you can over write in this file.
+> Just add the variable here, and it will be overwritten.
+> Try `$google-font-name: "Lobster";`
 
-<a name="publish-to-adapt-retail"></a>
+<a name="dependencies"></a>
+## Dependencies
+
+This project is using different dependencies to make it easier to make display banners.
+
+<a name="banner-style"></a>
+### [Banner style](https://github.com/AdaptRetail/banner-style)
+
+Micro frontend framework containing helpers like `grid` system using flex.
+
+<a name="sass-asset-inline"></a>
+### [sass-asset-inline](https://github.com/LasseHaslev/sass-asset-inliner)
+
+Inline assets like `image` and `fonts` in your sass files with simple syntax.
+
+```scss
+@font-face {
+    src: inline-font( 'path/to/your/font.ttf' ); // Include full font
+
+    // Subset font by adding regex as second parameter
+    // of each character you want to include
+    src: inline-font( 'path/to/your/font.ttf', '[0-9]' );
+}
+
+body {
+    // Inline image
+    background-image: inline-image( 'path/to/your/image.png' );
+
+    // Inline and resize image to width (Kepp aspect ratio)
+    background-image: inline-image( 'path/to/your/image.png', "200" );
+
+    // Resize image and ignoring aspect ratio
+    background-image: inline-image( 'path/to/your/image.png', "200x400" );
+
+    // Resize image to height and keep aspect ratio
+    background-image: inline-image( 'path/to/your/image.png', "_x400" );
+
+    // Underscore works also for height.
+    // ("200x_" equals "200" as shown above)
+}
+```
+
+> All files are included from your root folder.
+
+### [Adapt Data](https://github.com/AdaptRetail/banner-data)
+
+Communicate with Adapt Retail productions through our API.
+
+### [laravel-mix](https://github.com/JeffreyWay/laravel-mix)
+
+We are extending [laravel-mix](https://github.com/JeffreyWay/laravel-mix) with [Laravel mix extender](https://github.com/AdaptRetail/adapt-mix-extender) to include helpers like the [sass-asset-inline](#sass-asset-inline)
+
+<a name="extracted-style"></a>
+## Extracted style
+
+Some of the style of this template has been extracted [to another git repository](https://github.com/AdaptRetail/priceco-style).
+This is to reuse the elements and components in other productions.
+
+This is a recommendation if you are creating multiple templates for [Adapt Retail](https://adaptretail.com).
+
+<a name="publish"></a>
 ## Publishing to [Adapt Retail](https://adaptretail.com)
 
-1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
 1. [Log in to your Adapt retail account](https://app.adaptretail.com/signup_login.php?task=login)
 1. Click on template section in your left navigation bar
-1. Create a new `Banner template`
+1. Create a new `Banner` template
 1. Set your properties in `Details` tab
 1. Select `Files` tab
+1. Prepare files to [Adapt Retail](https://adaptretail.com) by running `npm run prod` in your terminal.
 1. Drag `dist/ad.js` and `dist/ad.css` to the `dropzone (Drop files or click to upload)` in Adapt
 1. **And you are done!**
 

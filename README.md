@@ -1,6 +1,8 @@
 # Adapt Video template
 > A great starting point for creating video banners just like a video editing software, only with code.
 
+[![Priceco Social Media Video](https://img.youtube.com/vi/OE-5Xb5wQfA/0.jpg)](https://www.youtube.com/watch?v=OE-5Xb5wQfA)
+
 ## Table of content
 - [Install](#install)
 - [Usage](#usage)

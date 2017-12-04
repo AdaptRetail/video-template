@@ -7,12 +7,9 @@
     - [Local development](#npm-run-watch)
     - [Prepare files for production](#npm-run-prod)
     - [Files](#files)
-    - [Folder structure](#folder-structure)
-        - [src/Scripts](#src-scripts)
-        - [src/Style](#src-style)
-        - [Assets](#assets)
-    - [Packages this template uses](#packages-this-template-uses)
-- [Publish to Adapt Retail](#publish-to-adapt-retail)
+- [Dependencies](#dependencies)
+- [Extracted style](#extracted-style)
+- [Publish to Adapt Retail](#publish)
 - [License](#license)
 
 <a name="install"></a>
@@ -35,6 +32,9 @@ npm install
 > All dependencies must be [installed](#install) before you can start using the template.
 
 This template is using `npm`, `Sass` and `Webpack` to build your files and containing [some extra helpers](#dependencies) to make things easier for you.
+
+> This project is heavily dependent on [GreenSock animation framework](https://greensock.com/gsap).
+> Make sure you understand the basic of GSAP before starting to use this template.
 
 <a name="npm-run-watch"></a>
 ### Local development
@@ -71,9 +71,12 @@ and you may add, move and remove files however you want.
 > All files are thoroughly commented, so if you're in doubt, just read the source. 
 
 <a name="script"></a>
-#### [`src/Script/main.js`](https://github.com/AdaptRetail/banner-template/blob/master/src/Script/main.js)
+#### [`src/Script/main.js`](https://github.com/AdaptRetail/video-template/blob/master/src/Scripts/main.js)
 
-This is the main file for your JavaScript.
+> This project is built on [AdaptRetail/animation-framework](https://github.com/AdaptRetail/animation-framework).
+> You see information about each class on the [repository page](https://github.com/AdaptRetail/animation-framework).
+
+This is the main file for your JavaScript and this is where we initialize your main timeline.
 What to do from this point is totally up to you.
 
 This file will be compiled down with [Webpack](https://webpack.github.io/) using [laravel-mix](https://github.com/JeffreyWay/laravel-mix).
@@ -83,15 +86,26 @@ This gives you some cool opertunities like.
 - [Import packages through NPM modules](https://www.npmjs.com/)
 - And more
 
+##### [`src/Scripts/Scenes/`](https://github.com/AdaptRetail/video-template/tree/master/src/Scripts/Scenes)
+
+This folder is holding all your [Scenes](https://github.com/AdaptRetail/animation-framework#scene).
+The scenes are handling the logic and animation for each scene in the animation.
+
+##### [`src/Scripts/Transitions/`](https://github.com/AdaptRetail/video-template/tree/master/src/Scripts/Transitions)
+
+This folder is holding all your [Scenes](https://github.com/AdaptRetail/animation-framework#transition).
+
+The transitions contains the animation between each scene.
+
 <a name="style"></a>
-#### [`src/Style/main.scss`](https://github.com/AdaptRetail/banner-template/blob/master/src/Style/main.scss)
+#### [`src/Style/main.scss`](https://github.com/AdaptRetail/video-template/blob/master/src/Style/main.scss)
 
 This is the main Sass file.
 This file is including all the other sass files.
 Do whatever you want from here.
 
 We have set up some logic to get you started. Browse through the files and see what each file does.
-If you want to overwrite some variables you can do it in [`src/Style/Utilities/Variables.scss`](https://github.com/AdaptRetail/banner-template/blob/master/src/Style/Utilities/Variables.scss).
+If you want to overwrite some variables you can do it in [`src/Style/Utilities/Variables.scss`](https://github.com/AdaptRetail/video-template/blob/master/src/Style/Utilities/Variables.scss).
 
 > Most of the files are containing variables you can over write in this file.
 > Just add the variable here, and it will be overwritten.

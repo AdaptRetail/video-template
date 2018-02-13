@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@adapt-retail/animation-framework": "^0.0.1",
-    "@lassehaslev/fit-text": "^1.1.0"
+    "@lassehaslev/fit-text": "^1.1.0",
+    "@priceco/style": "git+https://github.com/AdaptRetail/priceco-style.git"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",

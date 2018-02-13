@@ -1,4 +1,4 @@
-$product-padding: $margin !default;
+$product-padding: 6% !default;
 $product-name-font-size: 1.3em;
 $product-vendor-height-aspect: 11%;
 $product-vendor-spacing: .6em;
@@ -51,6 +51,11 @@ $product-vendor-spacing: .6em;
     &__save span {
         text-decoration: line-through;
     }
+}
+
+.bomb {
+    position: absolute;
+    top: 0;
 }
 
 /**

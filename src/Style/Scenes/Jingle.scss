@@ -1,7 +1,9 @@
+
+
 #jingle {
     background-color: white;
     .logo {
-        @include background-image( inline-image( 'assets/priceco_logo.svg' ), 70% );
+        @include background-image( $logo, 70% );
 
         /**
          * Move the logo to optical center

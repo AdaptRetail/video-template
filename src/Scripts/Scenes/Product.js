@@ -77,8 +77,6 @@ export default class Product extends Scene {
             url: item.url || 'https://google.com' + response.details.ga_url + '&utm_content=' + item.id,
         }
 
-        console.log(returnValue);
-
         return returnValue;
     }
 

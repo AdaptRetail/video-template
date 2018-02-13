@@ -24,14 +24,14 @@ export default class Slideshow extends Transition {
                 transformPerspective: 800,
             } );
             this.to( this.out.template, this.transitionTime/2, {
-                easeOut,
+                ease: easeOut,
                 rotationX: -90,
                 transformOrigin: 'center bottom',
                 opacity: 0,
             } );
 
             this.to(this.out.template.querySelector( '.price' ), this.transitionTime/2, {
-                easeOut,
+                ease: easeOut,
                 y: '100%',
             }, '-=' + this.transitionTime/2);
         }
@@ -44,18 +44,18 @@ export default class Slideshow extends Transition {
             this.fromTo( this.in.template, this.transitionTime/2, {
                 // x: '-100%',
                 transformPerspective: 400,
-                easeIn,
+                ease: easeIn,
                 rotationX: 90,
                 transformOrigin: 'center bottom',
             }, {
                 // x: '-100%',
                 transformPerspective: 400,
-                easeIn,
+                ease: easeIn,
                 rotationX: 0,
             }, '-=.09' );
 
             this.from(this.in.template.querySelector( '.price' ), this.transitionTime/2, {
-                easeIn,
+                ease: easeIn,
                 y: '-100%',
             }, '-=' + this.transitionTime/2);
 

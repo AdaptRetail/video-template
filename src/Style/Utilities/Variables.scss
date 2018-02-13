@@ -3,44 +3,33 @@
  * Every variable width a !default value will be overwritten
  */
 
-/*
+// $google-font-name: $priceco-font-family; // "roboto"
+// $banner-background: $priceco-blue-gradient !default; // transparent
+
+/**
  * Core/Typography.scss
  */
-// $font-size: 3.5vw !default;
-// $font-color: black !default;
-$google-font-name: $priceco-font-family; // "roboto"
+// $google-font-name: "Roboto" !default;
 // $font-family: $google-font-name, sans-serif !default;
 
-/*
+// $font-size: 3.5vw !default;
+// $font-color: black !default;
+
+/**
  * Elements/Container.scss
  */
 $banner-background: $priceco-blue-gradient !default; // transparent
 
-/*
- * Elements/Logo.scss
+/**
+ * Scenes/Jingle.scss
  */
-$logo: $priceco-logo !default; // inline-image( "assets/logo.svg" )
-// $logo-aspect: 37% !default;
-// $logo-margin: 2em auto 0 !default;
-// $logo-width: 55% !default;
+$jingle-logo: $priceco-logo !default; // inline-image( "assets/logo.svg" )
+// $jingle-background-color: white !default;
 
-/*
- * Elements/Navigation.scss
+/**
+ * Scenes/Product.scss
  */
-// $navigation-item-margin: 0 0 .5em 0 !default;
-// $navigation-item-padding: .3em !default;
-// $navigation-item-background-color: #000 !default;
-// $navigation-item-border-thickness: .1em !default;
-// $navigation-item-border-color: white !default;
-// $navigation-item-opacity: .2 !default;
-// $navigation-item-opacity-active: .5 !default;
-// $navigation-item-transition-speed: .3s !default;
-
-/*
- * Elements/Product.scss
- */
-// $product-padding: 2em !default;
-// $product-name-font-size: 1.3em !default;
-// $product-vendor-height-aspect: 11% !default;
-// $product-vendor-spacing: .6em !default;
-// $product-center-on-page: true !default;
+// $product-padding: 6% !default;
+// $product-name-font-size: 1.3em;
+// $product-vendor-height-aspect: 11%;
+// $product-vendor-spacing: .6em;

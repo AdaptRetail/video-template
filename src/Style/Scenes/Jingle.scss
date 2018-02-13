@@ -1,9 +1,10 @@
-
+$jingle-logo: inline-image( "assets/logo.svg" ) !default;
+$jingle-background-color: white !default;
 
 #jingle {
     background-color: white;
     .logo {
-        @include background-image( $logo, 70% );
+        @include background-image( $jingle-logo, 70% );
 
         /**
          * Move the logo to optical center
